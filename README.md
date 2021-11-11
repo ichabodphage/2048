@@ -15,8 +15,10 @@
 
 windows
 g++ -o 2048.exe main.cpp
-./main.exe
+
+./2048.exe
 
 linux
 g++ -o 2048 main.cpp
-./main.exe
+
+./2048.exe
