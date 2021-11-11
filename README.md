@@ -13,12 +13,6 @@
 
 ## building
 
-### windows
-
-g++ -o 2048.exe main.cpp
-
-./2048.exe
-
 ### linux
 
 g++ -o 2048 main.cpp
