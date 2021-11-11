@@ -1,5 +1,4 @@
 
-extern TERMINAL *cur_term;
 namespace tf{
     //variables that hold bash formating codes
     std::string bold = "\033[1m";
