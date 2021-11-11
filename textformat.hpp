@@ -1,5 +1,4 @@
-#include <unistd.h>
-#include <term.h>
+
 extern TERMINAL *cur_term;
 namespace tf{
     //variables that hold bash formating codes
