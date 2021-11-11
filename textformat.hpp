@@ -1,3 +1,6 @@
+#include <unistd.h>
+#include <term.h>
+extern TERMINAL *cur_term;
 namespace tf{
     //variables that hold bash formating codes
     std::string bold = "\033[1m";
@@ -8,7 +11,7 @@ namespace tf{
     std::string hide = "\033[8m";
 
     //variables that hold the end to bash formating codes
-    std::string boldEnd = "\033[21m";
+    std::string boldEnd = "\033[21m\033[24m";
     std::string dimEnd = "\033[22m";
     std::string underlineEnd = "\033[24m";
     std::string blinkEnd = "\033[25m";
@@ -22,4 +25,6 @@ namespace tf{
     std::string colorbg(int colorNum){
       return "\033[48;5;" +std::to_string(colorNum)+"m";
     }
+
+    
 }

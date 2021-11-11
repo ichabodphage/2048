@@ -3,6 +3,9 @@
 #include <random>
 #include <iostream>
 #include <chrono>
+#include <thread>
+#include <cstdlib>
+
 /* class that creates and runs a game board for a game of 2048
 */
 class GameBoard{
@@ -52,8 +55,13 @@ public:
           score += gameMap[row][col-1];
           gameMap[row][col-1] = 0;
         }
+        
       }
       }
+        system("clear");
+        std::cout.flush();
+        std::cout << this->to_string();
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
   }
   //moves all the numbers left
@@ -73,6 +81,10 @@ public:
         }
       }
       }
+      system("clear");
+      std::cout.flush();
+      std::cout << this->to_string();
+      std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
   }
   //moves all the numbers up
@@ -94,6 +106,10 @@ public:
         }
       }
       }
+      system("clear");
+      std::cout.flush();
+      std::cout << this->to_string();
+      std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
   }
   //moves all the numbers down
@@ -115,6 +131,10 @@ public:
         }
       }
       }
+      system("clear");
+      std::cout.flush();
+      std::cout << this->to_string();
+      std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
   }
   //returns the game board as a string
@@ -167,7 +187,7 @@ public:
       }
       switch(out.length()){
         case 1:
-          out = numColor+"  " + out+" " +tf::color(255)+tf::hideEnd;
+          out = numColor+"  " + out+" " + tf::hideEnd+tf::color(255);
           break;
         case 2:
           out = numColor+" "+ out+" " +tf::color(255);
@@ -185,7 +205,8 @@ public:
   
     k+= "\n";
   }
-  k += " __________________\n  score: " + std::to_string(score)+"\n";
+  k += " __________________\n  score: " 
+  + tf::bold + std::to_string(score)+ tf::boldEnd +"\n";
   return k;
   }
   //checks if 2048 is on the board as a win condition
